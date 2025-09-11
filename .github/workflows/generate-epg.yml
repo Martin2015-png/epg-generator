@@ -17,13 +17,14 @@ jobs:
         run: |
           choco install dotnetfx --version=4.8 -y
 
-      - name: Download WebGrab++
+      - name: Download WebGrab++ V5.3 from Softpedia
         run: |
-          Invoke-WebRequest -Uri "https://webgrabplus.com/sites/default/files/download/SW/V3.2/WebGrabPlus_V3.2_install.zip" -OutFile "WebGrabPlus.zip"
-          Expand-Archive -Path "WebGrabPlus.zip" -DestinationPath "WebGrab"
+          Invoke-WebRequest -Uri "https://softpedia-secure-download.com/dl/b36a84f06a82483d199566ab38c3e698/68c358ff/100265333/software/other_tools/WebGrabPlus_V5.3_install.exe" -OutFile "WebGrabPlus.exe"
 
-      - name: Copy config and SiteIni files
+      - name: Prepare WebGrab++ folder
         run: |
+          New-Item -ItemType Directory -Path "WebGrab" -Force
+          Move-Item "WebGrabPlus.exe" "WebGrab\WebGrabPlus.exe"
           Copy-Item "config\WebGrab++.config.xml" "WebGrab\WebGrab++.config.xml"
           New-Item -ItemType Directory -Path "WebGrab\siteini.pack\Germany" -Force
           Copy-Item "siteini\prisma.de.ini" "WebGrab\siteini.pack\Germany\prisma.de.ini"
@@ -31,7 +32,7 @@ jobs:
       - name: Run WebGrab++
         run: |
           cd WebGrab
-          .\WebGrab+Plus.exe
+          .\WebGrabPlus.exe
 
       - name: Upload guide.xml
         uses: actions/upload-artifact@v4
