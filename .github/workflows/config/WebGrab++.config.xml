@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <filename>guide.xml</filename>
+    <mode>full</mode>
+      <update>f</update>
+        <timespan>7</timespan>
+
+          <!-- Öffentlich-rechtlich -->
+            <channel><site>vodafone.de</site><site_id>das-erste</site_id><xmltv_id>Das Erste (DE)</xmltv_id></channel>
+              <channel><site>vodafone.de</site><site_id>zdf</site_id><xmltv_id>ZDF (DE)</xmltv_id></channel>
+                <channel><site>vodafone.de</site><site_id>3sat</site_id><xmltv_id>3sat (DE)</xmltv_id></channel>
+                  <channel><site>vodafone.de</site><site_id>arte</site_id><xmltv_id>Arte (DE)</xmltv_id></channel>
+                    <channel><site>vodafone.de</site><site_id>phoenix</site_id><xmltv_id>Phoenix (DE)</xmltv_id></channel>
+
+                      <!-- Regionale Dritte -->
+                        <channel><site>vodafone.de</site><site_id>wdr</site_id><xmltv_id>WDR (DE)</xmltv_id></channel>
+                          <channel><site>vodafone.de</site><site_id>ndr</site_id><xmltv_id>NDR (DE)</xmltv_id></channel>
+                            <channel><site>vodafone.de</site><site_id>br</site_id><xmltv_id>BR (DE)</xmltv_id></channel>
+                              <channel><site>vodafone.de</site><site_id>hr</site_id><xmltv_id>HR (DE)</xmltv_id></channel>
+                                <channel><site>vodafone.de</site><site_id>rbb</site_id><xmltv_id>RBB (DE)</xmltv_id></channel>
+                                  <channel><site>vodafone.de</site><site_id>mdr</site_id><xmltv_id>MDR (DE)</xmltv_id></channel>
+                                    <channel><site>vodafone.de</site><site_id>swr</site_id><xmltv_id>SWR (DE)</xmltv_id></channel>
+
+                                      <!-- Private Free-TV -->
+                                        <channel><site>vodafone.de</site><site_id>rtl</site_id><xmltv_id>RTL (DE)</xmltv_id></channel>
+                                          <channel><site>vodafone.de</site><site_id>rtl2</site_id><xmltv_id>RTL II (DE)</xmltv_id></channel>
+                                            <channel><site>vodafone.de</site><site_id>ntv</site_id><xmltv_id>n-tv (DE)</xmltv_id></channel>
+                                              <channel><site>vodafone.de</site><site_id>vox</site_id><xmltv_id>VOX (DE)</xmltv_id></channel>
+                                                <channel><site>vodafone.de</site><site_id>super-rtl</site_id><xmltv_id>Super RTL (DE)</xmltv_id></channel>
+                                                  <channel><site>vodafone.de</site><site_id>sat1</site_id><xmltv_id>Sat.1 (DE)</xmltv_id></channel>
+                                                    <channel><site>vodafone.de</site><site_id>sat1-gold</site_id><xmltv_id>Sat.1 Gold (DE)</xmltv_id></channel>
+                                                      <channel><site>vodafone.de</site><site_id>prosieben</site_id><xmltv_id>ProSieben (DE)</xmltv_id></channel>
+                                                        <channel><site>vodafone.de</site><site_id>sixx</site_id><xmltv_id>sixx (DE)</xmltv_id></channel>
+                                                          <channel><site>vodafone.de</site><site_id>kabel-eins</site_id><xmltv_id>Kabel Eins (DE)</xmltv_id></channel>
+                                                            <channel><site>vodafone.de</site><site_id>kabel-eins-doku</site_id><xmltv_id>Kabel Eins Doku (DE)</xmltv_id></channel>
+                                                              <channel><site>vodafone.de</site><site_id>welt</site_id><xmltv_id>Welt (DE)</xmltv_id></channel>
+                                                                <channel><site>vodafone.de</site><site_id>tele5</site_id><xmltv_id>Tele 5 (DE)</xmltv_id></channel>
+                                                                  <channel><site>vodafone.de</site><site_id>deluxe-music</site_id><xmltv_id>Deluxe Music (DE)</xmltv_id></channel>
+
+                                                                    <!-- Kinder & Familie -->
+                                                                      <channel><site>vodafone.de</site><site_id>toggo</site_id><xmltv_id>Toggo (DE)</xmltv_id></channel>
+                                                                        <channel><site>vodafone.de</site><site_id>nick</site_id><xmltv_id>Nickelodeon (DE)</xmltv_id></channel>
+                                                                          <channel><site>vodafone.de</site><site_id>nick-jr</site_id><xmltv_id>Nick Jr. (DE)</xmltv_id></channel>
+                                                                            <channel><site>vodafone.de</site><site_id>disney-channel</site_id><xmltv_id>Disney Channel (DE)</xmltv_id></channel>
+
+                                                                              <!-- Sport -->
+                                                                                <channel><site>vodafone.de</site><site_id>sport1</site_id><xmltv_id>Sport1 (DE)</xmltv_id></channel>
+                                                                                  <channel><site>vodafone.de</site><site_id>eurosport</site_id><xmltv_id>Eurosport (DE)</xmltv_id></channel>
+                                                                                    <channel><site>vodafone.de</site><site_id>sky-sport-news</site_id><xmltv_id>Sky Sport News (DE)</xmltv_id></channel>
+
+                                                                                      <!-- Doku & Wissen -->
+                                                                                        <channel><site>vodafone.de</site><site_id>n24-doku</site_id><xmltv_id>N24 Doku (DE)</xmltv_id></channel>
+                                                                                          <channel><site>vodafone.de</site><site_id>history</site_id><xmltv_id>History (DE)</xmltv_id></channel>
+                                                                                            <channel><site>vodafone.de</site><site_id>natgeo</site_id><xmltv_id>National Geographic (DE)</xmltv_id></channel>
+                                                                                              <channel><site>vodafone.de</site><site_id>discovery-channel</site_id><xmltv_id>Discovery Channel (DE)</xmltv_id></channel>
+                                                                                                <channel><site>vodafone.de</site><site_id>animal-planet</site_id><xmltv_id>Animal Planet (DE)</xmltv_id></channel>
+
+                                                                                                  <!-- International -->
+                                                                                                    <channel><site>vodafone.de</site><site_id>cnn</site_id><xmltv_id>CNN (INT)</xmltv_id></channel>
+                                                                                                      <channel><site>vodafone.de</site><site_id>bbc-world</site_id><xmltv_id>BBC World News (INT)</xmltv_id></channel>
+                                                                                                        <channel><site>vodafone.de</site><site_id>france24</site_id><xmltv_id>France 24 (INT)</xmltv_id></channel>
+                                                                                                          <channel><site>vodafone.de</site><site_id>al-jazeera</site_id><xmltv_id>Al Jazeera (INT)</xmltv_id></channel>
+
+                                                                                                            <!-- Film & Serien -->
+                                                                                                              <channel><site>vodafone.de</site><site_id>sky-cinema</site_id><xmltv_id>Sky Cinema (DE)</xmltv_id></channel>
+                                                                                                                <channel><site>vodafone.de</site><site_id>tnt-film</site_id><xmltv_id>TNT Film (DE)</xmltv_id></channel>
+                                                                                                                  <channel><site>vodafone.de</site><site_id>tnt-serie</site_id><xmltv_id>TNT Serie (DE)</xmltv_id></channel>
+                                                                                                                    <channel><site>vodafone.de</site><site_id>fox</site_id><xmltv_id>FOX (DE)</xmltv_id></channel>
+                                                                                                                      <channel><site>vodafone.de</site><site_id>axn</site_id><xmltv_id>AXN (DE)</xmltv_id></channel>
+
+                                                                                                                      </settings>
+                                                                                                                      
