@@ -16,10 +16,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y mono-complete wget
-          wget https://webgrabplus.com/sites/default/files/download/SW/V3.2/WebGrabPlus_V3.2_install.tar.gz
-          tar -xzf WebGrabPlus_V3.2_install.tar.gz
+          wget https://softpedia-secure-download.com/dl/8d54a7a0cb6f6ebafe730466db31ca17/68c34c1a/100265333/software/other_tools/WebGrabPlus_V5.3_install.exe
+          
           mkdir -p ~/webgrab
-          mv WebGrabPlus/* ~/webgrab/
+          mv WebGrabPlus_V5.3_install.exe ~/webgrab/
 
       - name: Copy Config & SiteIni
         run: |
@@ -27,7 +27,8 @@ jobs:
           cp siteini/*.ini ~/webgrab/
 
       - name: Run WebGrab++
-        run: mono ~/webgrab/WebGrab+Plus.exe
+        run: mono ~/webgrab/WebGrabPlus_V5.3_install.exe
+          
 
       - name: Upload guide.xml
         uses: actions/upload-artifact@v4
