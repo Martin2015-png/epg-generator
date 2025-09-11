@@ -19,7 +19,7 @@ jobs:
 
       - name: Download WebGrab++ V5.3 from Softpedia
         run: |
-          Invoke-WebRequest -Uri "https://softpedia-secure-download.com/dl/b36a84f06a82483d199566ab38c3e698/68c358ff/100265333/software/other_tools/WebGrabPlus_V5.3_install.exe" -OutFile "WebGrabPlus.exe"
+          Invoke-WebRequest -Uri "https://softpedia-secure-download.com/dl/b36a84f06a82483d199566ab38c3e698/68c358ff/100265333/software/other_tools/WebGrabPlus_V5.3_install.exe" -OutFile "WebGrab+Plus.exe"
 
       - name: Prepare WebGrab++ folder
         run: |
@@ -29,13 +29,13 @@ jobs:
           New-Item -ItemType Directory -Path "WebGrab\siteini.pack\Germany" -Force
           Copy-Item "siteini\prisma.de.ini" "WebGrab\siteini.pack\Germany\prisma.de.ini"
 
-      - name: Run WebGrab++
-        run: |
-          cd WebGrab
-          .\WebGrabPlus.exe
-
       - name: Upload guide.xml
         uses: actions/upload-artifact@v4
         with:
           name: epg
           path: WebGrab\guide.xml
+          - name: Run WebGrab++
+  run: |
+    cd WebGrab
+    .\WebGrab+Plus.exe
+
