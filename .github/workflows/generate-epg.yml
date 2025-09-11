@@ -30,7 +30,7 @@ jobs:
         run: mono ~/webgrab/WebGrab+Plus.exe
 
       - name: Upload guide.xml
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: epg
           path: ~/webgrab/guide.xml
