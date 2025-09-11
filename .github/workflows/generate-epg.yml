@@ -1,37 +1,40 @@
-name: Generate EPG
+name: Generate EPG with WebGrab++ (Windows)
 
 on:
-  schedule:
-    - cron: '0 3 * * *'  # Täglich um 03:00 Uhr UTC
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # Täglich um 03:00 Uhr
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  run-webgrab:
+    runs-on: windows-latest
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Mono & WebGrab++
+      - name: Install .NET Framework 4.8 (via Chocolatey)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y mono-complete wget
-          wget https://softpedia-secure-download.com/dl/8d54a7a0cb6f6ebafe730466db31ca17/68c34c1a/100265333/software/other_tools/WebGrabPlus_V5.3_install.exe
-          
-          mkdir -p ~/webgrab
-          mv WebGrabPlus_V5.3_install.exe ~/webgrab/
+          choco install dotnetfx --version=4.8 -y
 
-      - name: Copy Config & SiteIni
+      - name: Download WebGrab++
         run: |
-          cp config/WebGrab++.config.xml ~/webgrab/
-          cp siteini/*.ini ~/webgrab/
+          Invoke-WebRequest -Uri "https://webgrabplus.com/sites/default/files/download/SW/V3.2/WebGrabPlus_V3.2_install.zip" -OutFile "WebGrabPlus.zip"
+          Expand-Archive -Path "WebGrabPlus.zip" -DestinationPath "WebGrab"
+
+      - name: Copy config and SiteIni files
+        run: |
+          Copy-Item "config\WebGrab++.config.xml" "WebGrab\WebGrab++.config.xml"
+          New-Item -ItemType Directory -Path "WebGrab\siteini.pack\Germany" -Force
+          Copy-Item "siteini\prisma.de.ini" "WebGrab\siteini.pack\Germany\prisma.de.ini"
 
       - name: Run WebGrab++
-        run: mono ~/webgrab/WebGrabPlus_V5.3_install.exe
-          
+        run: |
+          cd WebGrab
+          .\WebGrab+Plus.exe
 
       - name: Upload guide.xml
         uses: actions/upload-artifact@v4
         with:
           name: epg
-          path: ~/webgrab/guide.xml
+          path: WebGrab\guide.xml
