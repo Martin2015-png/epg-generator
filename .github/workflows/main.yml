@@ -1,0 +1,47 @@
+name: Generate EPG
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # täglich um 03:00
+  workflow_dispatch:       # manuell starten
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Clone iptv-org/epg
+        run: |
+          git clone https://github.com/iptv-org/epg.git epg
+
+      - name: Install dependencies
+        run: |
+          cd epg
+          npm install
+
+      - name: Generate channels.xml
+        run: |
+          cd epg
+          npm run channels:generate -- --countries=de,at,ch
+          cp channels.xml ../channels.xml
+
+      - name: Generate guide.xml
+        run: |
+          cd epg
+          npm run grab -- --channels=../channels.xml --output=../guide.xml
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: epg-files
+          path: |
+            channels.xml
+            guide.xml
